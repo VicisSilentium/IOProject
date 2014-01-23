@@ -26,11 +26,18 @@ public class IOController
 	 */
 	private ArrayList<Game> projectGames;
 
+	/**
+	 * Constructor for the Controller, initializes the ArrayList of Games
+	 */
 	public IOController()
 	{
 		projectGames = new ArrayList<Game>();
 	}
 
+	/**
+	 * Getter for the ArrayList of Games
+	 * @return
+	 */
 	public ArrayList<Game> getProjectGames()
 	{
 		return projectGames;
@@ -44,6 +51,10 @@ public class IOController
 		appFrame = new IOFrame(this);
 	}
 
+	/**
+	 * A method that reads the saved game information.
+	 * @return Saved game information
+	 */
 	public Game readGameInformation()
 	{
 		String FileName = "save file.txt"; // Without a path it will look to the
@@ -77,6 +88,10 @@ public class IOController
 		return currentGame;
 	}
 
+	/**
+	 * A method that reads all the saved game information.
+	 * @return
+	 */
 	private String readAllGameInformation()
 	{
 		String fileContents = "";
@@ -101,6 +116,10 @@ public class IOController
 		return fileContents;
 	}
 
+	/**
+	 * Converts the text into data that can be saved and loaded.
+	 * @param currentInfo
+	 */
 	private void convertTextToGames(String currentInfo)
 	{
 
@@ -116,6 +135,10 @@ public class IOController
 		}
 	}
 
+	/**
+	 * Loads a random game from save file.txt.
+	 * @return
+	 */
 	public Game pickRandomGameFromSaveFile()
 	{
 		Game currentGame = null;
@@ -125,7 +148,14 @@ public class IOController
 
 		return currentGame;
 	}
-
+	
+	/**
+	 * 
+	 * @param gameTitle
+	 * @param gameRanking
+	 * @param gameRules
+	 * @return
+	 */
 	public Game makeGameFromInput(String gameTitle, String gameRanking, String gameRules)
 	{
 		Game currentGame = new Game();
